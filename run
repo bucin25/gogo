@@ -1,0 +1,98 @@
+#AUTHOR 		: Jessica Putry ( RATU ERROR )
+#GROUP 			: RATU ERROR
+#JABATAN 		: Owner Group 
+#Coded By Jessica Putry.
+
+
+import os
+try:
+    import requests
+except ImportError:
+    print('\n [×] Modul requests belum terinstall!...\n')
+    os.system('pip install requests')
+
+try:
+    import concurrent.futures
+except ImportError:
+    print('\n [×] Modul Futures belum terinstall!...\n')
+    os.system('pip install futures')
+
+try:
+    import bs4
+except ImportError:
+    print('\n [×] Modul Bs4 belum terinstall!...\n')
+    os.system('pip install bs4')
+
+import requests, os, re, bs4, sys, json, time, random, datetime, subprocess
+from concurrent.futures import ThreadPoolExecutor as YayanGanteng
+from datetime import datetime
+from bs4 import BeautifulSoup
+ct = datetime.now()
+n = ct.month
+bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+try:
+    if n < 0 or n > 12:
+        exit()
+    nTemp = n - 1
+except ValueError:
+    exit()
+
+current = datetime.now()
+ta = current.year
+bu = current.month
+ha = current.day
+op = bulan[nTemp]
+### WARNA RANDOM ###
+P = '\x1b[1;97m' # PUTIH
+M = '\x1b[1;91m' # MERAH
+H = '\x1b[1;92m' # HIJAU
+K = '\x1b[1;93m' # KUNING
+B = '\x1b[1;94m' # BIRU
+U = '\x1b[1;95m' # UNGU
+O = '\x1b[1;96m' # BIRU MUDA
+N = '\x1b[0m'    # WARNA MATI
+my_color = [
+ P, M, H, K, B, U, O, N]
+warna = random.choice(my_color)
+#  Moch Yayan Juan Alvredo XD.  #
+#------------------------------->
+
+############################ RESPONSE FACEBOOK ###########################################
+data,data2={},{}
+aman,cp,salah=0,0,0
+ubahP,pwBaru=[],[]
+ok,cp,id,loop = [],[],[],0
+url_lookup = "https://lookup-id.com/"
+url_mb = "https://mbasic.facebook.com"
+url_ip = "https://www.httpbin.org/ip"
+header_grup = {"user-agent": "Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]"}
+bulan_ttl = {"01": "Januari", "02": "Februari", "03": "Maret", "04": "April", "05": "Mei", "06": "Juni", "07": "Juli", "08": "Agustus", "09": "September", "10": "Oktober", "11": "November", "12": "Desember"}
+###########################################################################################
+
+# lempankkkkkkkk
+def jalan(z):
+    for e in z + '\n':
+        sys.stdout.write(e)
+        sys.stdout.flush()
+        time.sleep(0.03)
+		
+def logo():
+	time.sleep (0.01)
+	print
+	print
+ 	jalan ('\033[1;37m                    ______---_____ ')
+  	jalan ('\033[1;37m         ___-----           __      ----_ ')
+	jalan ('\033[1;37m ___---             ___------             \ ')
+	jalan ('\033[1;37m     ---______        ----                 \ ')
+	jalan ('\033[1;37m                 --__    |             _____) ')
+	jalan ('\033[1;37m                     -                /     \ ')
+	jalan ('\033[1;37m          _____-----    ___--         \    /)\ ')
+	jalan ('\033[1;37m    -----_____      ---____            \__/  / ')
+	jalan ('\033[1;37m                 --__    \ --    _          /\ ')
+	jalan ('\033[1;37m                      --__-__     \_____/   \_/\ ')
+	jalan ('\033[1;37m                            ----|   /          | ')
+	jalan ('\033[1;36mAuthor \033[1;37m : YAYAN-XD              |  |___________| ')
+	jalan ('\033[1;36mAdmin  \033[1;37m : JESSICA PUTRI         |  | ((_(_)| )_) ')
+	jalan ('\033[1;36mGroup\033[1;37m   : \033[1;37mRATU ERROR            \33[0;1m\033[1;37m|  \_((_(_)|/(_) ')
+	jalan ('\033[1;36m¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤\033[1;37m\             ( ')
+	jalan ('\033[1;36m¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤\033[1;37m\_____________)')
